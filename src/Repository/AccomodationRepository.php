@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Accomodation;
+use App\Entity\Type;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,6 +19,20 @@ class AccomodationRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Accomodation::class);
     }
+
+    // récupérer tous les logements avec seulement les données pour les cards
+    public function findAllAccomodations() {
+
+        $qb = $this->createQueryBuilder('a');  // SELECT * FROM accomodation AS a
+
+        return $qb->addSelect('type')
+            ->addSelect('category')
+            ->leftJoin('a.type', 'type')
+            ->leftJoin('a.category', 'category')
+            ->getQuery()
+            ->getResult();
+    }
+
 
     // /**
     //  * @return Accomodation[] Returns an array of Accomodation objects
