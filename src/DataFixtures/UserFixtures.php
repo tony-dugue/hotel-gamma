@@ -19,6 +19,8 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
+        // ====== CREATION DE 2 ADMIN ============
+
         $admin = new User();
         $admin->setEmail("tony.dugue@gmail.com")
             ->setFirstName("Tony")
@@ -37,7 +39,9 @@ class UserFixtures extends Fixture
         $pierre->setPassword($password);
         $manager->persist($pierre);
 
-        // initialisation du générateur faker
+        // ===== CREATION DE 10 USERS ALEATOIRES ======
+
+        //initialisation du générateur faker
         $faker = Factory::create('fr-FR');
 
         for($i = 1; $i <= 10; $i++) {

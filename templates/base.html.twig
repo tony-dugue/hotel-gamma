@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Gamma Hotel{% endblock %}</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %}
+</head>
+<body>
+
+<header class="header-main">
+    <div class="top-navigation container">
+        <div class="address">54 route de la plage, 56100 Lorient</div>
+        <nav class="nav-social">
+            <ul>
+                <li>
+                    <a href="#"><span class="fa fa-facebook"></span></a>
+                    <a href="#"><span class="fa fa-twitter"></span></a>
+                    <a href="#"><span class="fa fa-linkedin"></span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-navigation container">
+        <a href="index.html">
+            <img src="images/logo.png" class="logo" alt="Gamma Hotel">
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="active">Accueil</a>
+                </li>
+                <li>
+                    <a href="#">Actualités</a>
+                </li>
+                <li>
+                    <a href="#">Nos Logements</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+{% block body %}{% endblock %}
+
+<footer class="footer-container container">
+    <div class="footer-main">
+        <ul class="footer-nav">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Nos Chambres</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <p>Copyright 2019 Tous droits réservés</p>
+    </div>
+    <div class="footer-secondary"></div>
+</footer>
+
+<script src="bundle.js"></script>
+{% block javascripts %} {{ encore_entry_script_tags('app') }} {% endblock %}
+</body>
 </html>
+
