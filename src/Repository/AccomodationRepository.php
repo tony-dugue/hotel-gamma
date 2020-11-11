@@ -48,6 +48,36 @@ class AccomodationRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    // récupérer tous les chambres
+    public function findAllRooms()
+    {
+        $qb = $this->createQueryBuilder('a');  // SELECT * FROM accomodation AS a
+
+        return $qb->addSelect('type')
+            ->addSelect('category')
+            ->leftJoin('a.type', 'type')
+            ->leftJoin('a.category', 'category')
+            ->where('type.name = :val')
+            ->setParameter('val', 'Chambre')
+            ->getQuery()
+            ->getResult();
+    }
+
+    // récupérer tous les appartements
+    public function findAllApartments()
+    {
+        $qb = $this->createQueryBuilder('a');  // SELECT * FROM accomodation AS a
+
+        return $qb->addSelect('type')
+            ->addSelect('category')
+            ->leftJoin('a.type', 'type')
+            ->leftJoin('a.category', 'category')
+            ->where('type.name = :val')
+            ->setParameter('val', 'Appartement')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Accomodation[] Returns an array of Accomodation objects
     //  */

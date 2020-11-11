@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Tous les logements' %}
+
+{% block body %}
+
+<section class="page-header room-header container">
+    <img src="{{ asset('images/home-header-bg.jpg') }}" class="img-responsive" alt="Gamma Hotel">
+</section>
+
+<section class="container home-content">
+
+    <h1>Découvrez toutes nos chambres</h1>
+
+    <h2>Chambres</h2>
+
+    <div class="grid grid-rooms">
+        {% for acc in accomodationRooms %}
+            {% include 'accomodation/_card_accomodation.html.twig' with {'acc' : acc} only %}
+        {% endfor %}
+    </div>
+
+    <h2>Appartements</h2>
+
+    <div class="grid grid-rooms">
+        {% for acc in accomodationApt %}
+            {% include 'accomodation/_card_accomodation.html.twig' with {'acc' : acc} only %}
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}

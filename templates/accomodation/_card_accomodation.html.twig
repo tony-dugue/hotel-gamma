@@ -1,0 +1,18 @@
+<article>
+    <header>
+        <img src="{{ asset('uploads/rooms/' ~ acc.photo) }}" class="img-responsive" alt="">
+    </header>
+    <footer>
+        <h3>{{ acc.type.name }} {{ acc.category.name }}</h3>
+        <ul class="room-features">
+            <li><i class="fa fa-bed"></i> {{ acc.beds }}</li>
+            <li><i class="fa fa-user"></i> {{ acc.persons }}</li>
+            <li><i class="fa fa-expand"></i> {{ acc.size }}m<sup>2</sup></li>
+            <li><i class="fa fa-euro"></i> {{ acc.price }}</li>
+        </ul>
+        <a href="{{ path('accomodation_show', { id: acc.id}) }}" class="button button-primary">
+            <i class="fa fa-eye"></i>
+            Voir plus
+        </a>
+    </footer>
+</article>
