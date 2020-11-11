@@ -267,4 +267,12 @@ class Accomodation
 
         return $this;
     }
+
+    public function __toString() {
+        $type = $this->getType();
+        $category = $this->getCategory();
+        $persons = $this->getPersons();
+
+        return $type . ' ' . $category . '(' . $persons . ' personnes)';
+    }
 }

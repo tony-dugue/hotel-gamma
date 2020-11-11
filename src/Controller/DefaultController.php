@@ -19,6 +19,7 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request, AccomodationRepository $accRepo): Response
     {
+        // initialisation des données du formulaire
         $minPrice = 0;
         $maxPrice = 200;
 
@@ -27,7 +28,7 @@ class DefaultController extends AbstractController
         $form = $this->createForm(AccomodationSearchType::class);
         $form->handleRequest($request);  // vérifie les données du formulaire
 
-        // on récupère en base de données tous les logements et les catégories
+        // on récupère en base de données tous les logements
         $accomodations = $accRepo->findAllAccomodations();
 
         // ====== TRAITEMENT DU FORMULAIRE DE RECHERCHE ========
@@ -38,7 +39,7 @@ class DefaultController extends AbstractController
             $minPrice = $form->getData()->getPriceMin();
             $maxPrice = $form->getData()->getPriceMax();
 
-            // Récupère les données du formulaire et lance la requête
+            // Récupère les données du formulaire et récupère les logements suivant condition
             $accomodations = $accRepo->findSearchAccomodation($type, $minPrice, $maxPrice);
         }
 

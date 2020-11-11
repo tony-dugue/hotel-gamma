@@ -1,6 +1,16 @@
 <header class="header-main">
+
     <div class="top-navigation container">
         <div class="address">54 route de la plage, 56100 Lorient</div>
+
+        {% if app.user %}
+            Bonjour {{ app.user.firstName ~ ' ' ~ app.user.lastName }} <a href="{{ path('app_logout') }}" class="button
+            button-secondary">Se
+            déconnecter</a>
+        {% else %}
+            <a href="{{ path('app_login') }}" class="button button-secondary">Se connecter</a>
+        {% endif %}
+
         <nav class="nav-social">
             <ul>
                 <li>
@@ -11,6 +21,7 @@
             </ul>
         </nav>
     </div>
+
     <div class="main-navigation container">
         <a href="{{ path('homepage') }}">
             <img src="{{ asset('images/logo.png') }}" class="logo" alt="Gamma Hotel">
@@ -24,4 +35,5 @@
             </ul>
         </nav>
     </div>
+
 </header>
