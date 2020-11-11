@@ -29,11 +29,11 @@
             </div>
             <div class="form-group">
                 {{ form_label(searchForm, 'Prix min') }}
-                {{ form_widget(searchForm.priceMin, {'attr' : {'value': '0'}}) }}
+                {{ form_widget(searchForm.priceMin, {'attr' : {'value': minPrice} }) }}
             </div>
             <div class="form-group">
                 {{ form_label(searchForm, 'Prix max') }}
-                {{ form_widget(searchForm.priceMax, {'attr' : {'value': '200'}}) }}
+                {{ form_widget(searchForm.priceMax, {'attr' : {'value': maxPrice}}) }}
             </div>
             <button type="submit" class="button button-primary"><i class="fa fa-search"></i>Rechercher</button>
             <a href="{{ path('homepage') }}" class="button button-primary">Tous les logements</a>

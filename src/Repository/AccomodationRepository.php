@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Accomodation;
-use App\Entity\Type;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -41,12 +40,10 @@ class AccomodationRepository extends ServiceEntityRepository
         return $qb->addSelect('type')
             ->leftJoin('a.type', 'type')
             ->andWhere('type.name = :val')
+            ->andWhere('a.price BETWEEN :min AND :max')
             ->setParameter('val', $type)
-            ->andWhere('a.price > :min')
             ->setParameter('min', $minPrice)
-            ->andWhere('a.price < :max')
             ->setParameter('max', $maxPrice)
-
             ->getQuery()
             ->getResult();
     }

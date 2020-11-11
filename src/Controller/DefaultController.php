@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\AccomodationSearch;
 use App\Form\AccomodationSearchType;
 use App\Repository\AccomodationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,6 +19,9 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request, AccomodationRepository $accRepo): Response
     {
+        $minPrice = 0;
+        $maxPrice = 200;
+
         // ====== AFFICHAGE FORMULAIRE DE RECHERCHE ========
 
         $form = $this->createForm(AccomodationSearchType::class);
@@ -43,6 +45,8 @@ class DefaultController extends AbstractController
         return $this->render('default/index.html.twig', [
             "accomodations" => $accomodations,
             "searchForm" => $form->createView(),  // on envoi le formulaire à la vue
+            "minPrice" => $minPrice,
+            "maxPrice" => $maxPrice
         ]);
     }
 
