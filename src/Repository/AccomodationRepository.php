@@ -21,8 +21,8 @@ class AccomodationRepository extends ServiceEntityRepository
     }
 
     // récupérer tous les logements avec seulement les données pour les cards
-    public function findAllAccomodations() {
-
+    public function findAllAccomodations()
+    {
         $qb = $this->createQueryBuilder('a');  // SELECT * FROM accomodation AS a
 
         return $qb->addSelect('type')
@@ -33,6 +33,23 @@ class AccomodationRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    //récupérer liste des logements avec la barre de recherche (homepage)
+    public function findSearchAccomodation($type, $minPrice, $maxPrice)
+    {
+        $qb = $this->createQueryBuilder('a');  // SELECT * FROM accomodation AS a
+
+        return $qb->addSelect('type')
+            ->leftJoin('a.type', 'type')
+            ->andWhere('type.name = :val')
+            ->setParameter('val', $type)
+            ->andWhere('a.price > :min')
+            ->setParameter('min', $minPrice)
+            ->andWhere('a.price < :max')
+            ->setParameter('max', $maxPrice)
+
+            ->getQuery()
+            ->getResult();
+    }
 
     // /**
     //  * @return Accomodation[] Returns an array of Accomodation objects

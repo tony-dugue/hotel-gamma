@@ -11,52 +11,66 @@
     <section class="container home-content">
         <h1>Bienvenue à l'hotel Gamma</h1>
 
-        <form class="form-search">
+        {#
+        <div class="form-group">
+            <label for="search-type">Type</label>
+            <select name="type_id" id="search-type">
+                {% for type in types %}
+                    <option>{{ type.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        #}
+
+        {{ form_start(searchForm, {'attr' : {'class': 'form-search'}}) }}
             <div class="form-group">
-                <label for="search-type">Type</label>
-                <select name="type_id" id="search-type">
-                    {% for category in categories %}
-                        <option>{{ category.name }}</option>
-                    {% endfor %}
-                </select>
+                {{ form_label(searchForm, 'Type') }}
+                {{ form_widget(searchForm.type) }}
             </div>
             <div class="form-group">
-                <label for="search-price-from">Prix min</label>
-                <input type="number" id="search-price-from" min="0" value="0">
+                {{ form_label(searchForm, 'Prix min') }}
+                {{ form_widget(searchForm.priceMin, {'attr' : {'value': '0'}}) }}
             </div>
             <div class="form-group">
-                <label for="search-price-to">Prix max</label>
-                <input type="number" id="search-price-to" min="0" value="200">
+                {{ form_label(searchForm, 'Prix max') }}
+                {{ form_widget(searchForm.priceMax, {'attr' : {'value': '200'}}) }}
             </div>
-            <button type="submit" class="button button-primary">
-                <i class="fa fa-search"></i>
-                Rechercher
-            </button>
-        </form>
+            <button type="submit" class="button button-primary"><i class="fa fa-search"></i>Rechercher</button>
+            <a href="{{ path('homepage') }}" class="button button-primary">Tous les logements</a>
+        {{ form_end(searchForm) }}
 
         <h2>Découvrez nos chambres</h2>
+
         <div class="grid grid-rooms">
 
-            {% for acc in accomodations %}
-                <article>
-                    <header>
-                        <img src="{{ asset('uploads/rooms/' ~ acc.photo) }}" class="img-responsive" alt="">
-                    </header>
-                    <footer>
-                        <h3>{{ acc.type.name }} {{ acc.category.name }}</h3>
-                        <ul class="room-features">
-                            <li><i class="fa fa-bed"></i> {{ acc.beds }}</li>
-                            <li><i class="fa fa-user"></i> {{ acc.persons }}</li>
-                            <li><i class="fa fa-expand"></i> {{ acc.size }}m<sup>2</sup></li>
-                            <li><i class="fa fa-euro"></i> {{ acc.price }}</li>
-                        </ul>
-                        <a href="{{ path('accomodation_show', { id: acc.id}) }}" class="button button-primary">
-                            <i class="fa fa-eye"></i>
-                            Voir plus
-                        </a>
-                    </footer>
-                </article>
-            {% endfor %}
+            {% if accomodations %}
+
+                {% for acc in accomodations %}
+
+                    <article>
+                        <header>
+                            <img src="{{ asset('uploads/rooms/' ~ acc.photo) }}" class="img-responsive" alt="">
+                        </header>
+                        <footer>
+                            <h3>{{ acc.type.name }} {{ acc.category.name }}</h3>
+                            <ul class="room-features">
+                                <li><i class="fa fa-bed"></i> {{ acc.beds }}</li>
+                                <li><i class="fa fa-user"></i> {{ acc.persons }}</li>
+                                <li><i class="fa fa-expand"></i> {{ acc.size }}m<sup>2</sup></li>
+                                <li><i class="fa fa-euro"></i> {{ acc.price }}</li>
+                            </ul>
+                            <a href="{{ path('accomodation_show', { id: acc.id}) }}" class="button button-primary">
+                                <i class="fa fa-eye"></i>
+                                Voir plus
+                            </a>
+                        </footer>
+                    </article>
+
+                {% endfor %}
+
+            {% else %}
+                <p>Aucun résultat trouvés</p>
+            {% endif %}
 
         </div>
     </section>
