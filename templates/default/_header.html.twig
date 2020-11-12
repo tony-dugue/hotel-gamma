@@ -37,3 +37,12 @@
     </div>
 
 </header>
+
+<section class="container">
+    {% for message in app.flashes('success') %}
+        <div style="background: #3c763d; color: white; border-radius: 8px; padding: 20px; margin: 30px 0;">
+            {{ message }}
+        </div>
+    {% endfor %}
+</section>
+

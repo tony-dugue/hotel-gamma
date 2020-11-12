@@ -1,0 +1,30 @@
+
+{{ form_start(bookingForm, {'attr' : {'class': 'form-booking'}}) }}
+
+    <fieldset>
+
+        <legend>Réservation</legend>
+
+        <div class="form-group">
+            {{ form_label(bookingForm, 'Date de départ') }}
+            {{ form_widget(bookingForm.dateStart) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(bookingForm, 'Date d\'arrivée') }}
+            {{ form_widget(bookingForm.dateEnd) }}
+        </div>
+
+        {% if app.user %}
+            <button type="submit" class="button button-primary"><i class="fa fa-check"></i>Réserver</button>
+        {% else %}
+        <p>Veuillez-vous connecter pour faire une réservation :
+            <a href="{{ path('app_login') }}" class="button button-secondary"
+               style="width: 100px; display: inline;">Se connecter</a>
+        </p>
+        {% endif %}
+
+    </fieldset>
+
+{{ form_end(bookingForm) }}
+
