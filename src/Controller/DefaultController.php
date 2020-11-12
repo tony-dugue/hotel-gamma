@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\AccomodationSearchType;
 use App\Repository\AccomodationRepository;
+use App\Repository\BookingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,9 +16,10 @@ class DefaultController extends AbstractController
      * @Route("/", name="homepage", methods={"GET|POST"})
      * @param Request $request
      * @param AccomodationRepository $accRepo
+     * @param BookingRepository $bookingRepo
      * @return Response
      */
-    public function index(Request $request, AccomodationRepository $accRepo): Response
+    public function index(Request $request, AccomodationRepository $accRepo, BookingRepository $bookingRepo): Response
     {
         // initialisation des données du formulaire
         $minPrice = 0;
@@ -30,6 +32,10 @@ class DefaultController extends AbstractController
 
         // on récupère en base de données tous les logements
         $accomodations = $accRepo->findAllAccomodations();
+
+        // On récupère en base de données les 3 id logements les plus réservés
+        $limit = 3;
+        $bestAccommodations = $bookingRepo->findBestAccommodations($limit);
 
         // ====== TRAITEMENT DU FORMULAIRE DE RECHERCHE ========
 
@@ -45,6 +51,7 @@ class DefaultController extends AbstractController
 
         return $this->render('default/index.html.twig', [
             "accomodations" => $accomodations,
+            "bestAccomodations" => $bestAccommodations,
             "searchForm" => $form->createView(),  // on envoi le formulaire à la vue
             "minPrice" => $minPrice,
             "maxPrice" => $maxPrice

@@ -19,32 +19,18 @@ class BookingRepository extends ServiceEntityRepository
         parent::__construct($registry, Booking::class);
     }
 
-    // /**
-    //  * @return Booking[] Returns an array of Booking objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    // récupérer les meilleurs logements réservés
+    public function findBestAccommodations($limit)
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $qb = $this->createQueryBuilder('b')  // SELECT * FROM booking AS b
+            ->from('App:Accomodation', 'a')
+            ->select('a')
+            ->groupBy('b.accomodation', 'a')
+            ->orderBy('count(b.accomodation)', 'DESC')
+            ->setMaxResults($limit);
 
-    /*
-    public function findOneBySomeField($value): ?Booking
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        return $qb->getQuery()
+            ->getResult();
     }
-    */
 }
+

@@ -9,6 +9,7 @@
     </section>
 
     <section class="container home-content">
+
         <h1>Bienvenue à l'hôtel Gamma</h1>
 
         {#
@@ -54,6 +55,21 @@
             {% endif %}
 
         </div>
+
+    </section>
+
+    <section class="container home-content" style="background: #e8eaec">
+
+        <h2>Top 3 des logements les plus réservés</h2>
+
+        <div class="grid grid-rooms">
+
+            {% for acc in bestAccomodations %}
+                {% include 'accomodation/_card_accomodation.html.twig' with {'acc' : acc} only %}
+            {% endfor %}
+
+        </div>
+
     </section>
 
 {% endblock %}
