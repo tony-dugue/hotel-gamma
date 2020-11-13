@@ -28,10 +28,18 @@
         </a>
         <nav>
             <ul>
-                <li><a href="{{ path('homepage') }}" class="active">Accueil</a></li>
-                <li><a href="#">Actualités</a></li>
-                <li><a href="{{ path('accomodation_showAll') }}">Nos Logements</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                    <a href="{{ path('homepage') }}"
+                       {% if app.request.attributes.get('_route') == "homepage" %}class="active"{% endif %}>Accueil
+                    </a>
+                </li>
+                <li><a href="{{ path('construct_page') }}">Actualités</a></li>
+                <li>
+                    <a href="{{ path('accomodation_showAll') }}"
+                       {% if app.request.attributes.get('_route') == "accomodation_showAll" %}class="active"{% endif %}>Nos Logements
+                    </a>
+                </li>
+                <li><a href="{{ path('construct_page') }}">Contact</a></li>
             </ul>
         </nav>
     </div>

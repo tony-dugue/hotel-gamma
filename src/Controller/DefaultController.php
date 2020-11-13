@@ -58,4 +58,12 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/construct/", name="construct_page")
+     * @return Response
+     */
+    public function construct(): Response
+    {
+        return $this->render('default/construct_page.html.twig');
+    }
 }
