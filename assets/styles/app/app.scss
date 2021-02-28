@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700");
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+// utils
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// Base
+@import 'base/general';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/images';
+
+// Layout
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'layout/homepage/welcome';
+@import 'layout/homepage/search-rooms';
+@import 'layout/homepage/about';
+@import 'layout/homepage/room';
+@import 'layout/homepage/testimonial';
+@import 'layout/homepage/project';
+@import 'layout/homepage/blog';
+
+@import 'layout/rooms/breadcrumb';
+@import 'layout/rooms/rooms';
+@import 'layout/rooms/reservation';
+@import 'layout/rooms/single-room';
+
+// Components
+@import 'components/button';
+@import 'components/preloader';
+@import 'components/pagination';
+@import 'components/slider-range';
+

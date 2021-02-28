@@ -1,0 +1,179 @@
+.footer-section {
+    position         : relative;
+    z-index          : 1;
+    background-color : $color-secondary;
+}
+
+.main-footer {
+
+    &__column {
+        position : relative;
+        z-index  : 1;
+
+        .widget-title {
+            font-size      : 22px;
+            color          : $color-white;
+            margin-bottom  : 25px;
+            display        : block;
+            text-transform : capitalize;
+
+            @include responsive(lg) { font-size : 18px; }
+            @include responsive(sm) { font-size : 18px; }
+        }
+
+        .footer-nav {
+            position : relative;
+            z-index  : 1;
+
+            li {
+                a {
+                    display        : block;
+                    margin-bottom  : 10px;
+                    color          : $color-paragraph;
+                    font-size      : 14px;
+                    font-weight    : 400;
+                    text-transform : capitalize;
+
+                    &:focus, &:hover {
+                        color :$color-white;
+                    }
+                }
+
+                &:last-child a {
+                    margin-bottom : 0;
+                }
+            }
+        }
+
+        .nl-form {
+            position   : relative;
+            z-index    : 1;
+            margin-top : 30px;
+
+            input {
+                width            : 100%;
+                height           : 46px;
+                background-color : #3e525f;
+                border-radius    : 30px;
+                border           : none;
+                padding          : 0 20px;
+                color            :$color-white;
+                font-size        : 14px;
+
+                &:focus {
+                    box-shadow : none;
+                }
+            }
+
+            button {
+                position                    : absolute;
+                width                       : 40px;
+                height                      : 40px;
+                border-radius               : 50%;
+                border                      : none;
+                top                         : 3px;
+                right                       : 3px;
+                color                       : $color-white;
+                background-color            : $color-primary;
+                cursor                      : pointer;
+                transition-duration         : 500ms;
+
+                &:focus, &:hover {
+                    background-color : $color-text;
+                }
+            }
+        }
+
+        .footer-logo {
+            display       : block;
+            margin-bottom : 20px;
+        }
+
+        p {
+            color : #afb4bf;
+        }
+
+        h4 {
+            color : $color-primary;
+        }
+
+        span {
+            color         : #afb4bf;
+            font-size     : 14px;
+            display       : block;
+            margin-bottom : 10px;
+
+            &:last-child {
+                margin-bottom : 0;
+            }
+        }
+    }
+}
+
+
+.copywrite-text {
+    position : relative;
+    z-index  : 1;
+
+    @include responsive(sm) {
+        margin-bottom : 15px;
+        text-align    : center;
+    }
+
+    p {
+        font-size     : 14px;
+        color         : #afb4bf;
+        margin-bottom : 0;
+
+        @include responsive(sm) {
+            font-size : 12px;
+        }
+
+        a {
+            color     : #afb4bf;
+            font-size : 14px;
+
+            @include responsive(sm) {
+                font-size : 12px;
+            }
+
+            &:focus, &:hover {
+                color : $color-white;
+            }
+        }
+    }
+}
+
+.copywrite {
+    position   : relative;
+    z-index    : 1;
+    padding    : 15px 0;
+    border-top : 1px solid #273d4b;
+
+    .social-info {
+        text-align : right;
+
+        @include responsive(sm) {
+            text-align : center;
+        }
+
+        a {
+            display      : inline-block;
+            color        : #afb4bf;
+            padding-left : 20px;
+
+            &:hover, &:focus {
+                &:hover,
+                &:focus {
+                    .facebook-icon { color: $color-social-fcb; }
+                    .twitter-icon { color: $color-social-twitter; }
+                    .youtube-icon { color: $color-social-youtube; }
+                    .tripadvisor-icon { color: $color-social-tripadvisor; }
+                    .instagram-icon { color: $color-social-instagram; }
+                }
+            }
+        }
+    }
+}
+
+

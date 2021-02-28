@@ -1,0 +1,38 @@
+.pagination {
+    position : relative;
+    z-index  : 1;
+
+    .page-item {
+
+        &:last-child .page-link {
+            border-top-right-radius    : 3px;
+            border-bottom-right-radius : 3px;
+        }
+    
+        &:first-child .page-link {
+            margin-left               : 0;
+            border-top-left-radius    : 3px;
+            border-bottom-left-radius : 3px;
+        }
+
+        .page-link {
+            padding          : 12px 15px;
+            color            : $color-text;
+            border           : none;
+            background-color : #e8f1f8;
+            margin-right     : 5px;
+            border-radius    : 3px;
+
+            &:hover, &:focus {
+                background-color : $color-primary;
+                color            : $color-white;
+                border-color     : $color-primary;
+            }
+
+            &:focus {
+                box-shadow : none;
+            }
+        }
+    }
+}
+

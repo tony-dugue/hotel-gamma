@@ -1,0 +1,70 @@
+.search-rooms-section {
+    position: relative;
+}
+
+.search-rooms {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    transform: translateY(40%);
+    z-index       : 1;
+    padding-left  : 5%;
+    padding-right : 5%;
+
+    @include responsive(lg) {
+        padding-left  : 2%;
+        padding-right : 2%;
+    }
+    @include responsive(md) {
+        padding-left  : 0%;
+        padding-right : 0%;
+    }
+    @include responsive(sm) {
+        padding-left  : 0%;
+        padding-right : 0%;
+    }
+
+    .search-rooms__form {
+        position         : relative;
+        z-index          : 1;
+        width            : 100%;
+        box-shadow       : $box-shadow-form;
+        padding          : 40px 40px 0 40px;
+        border-radius    : 5px;
+        background-color : $color-white;
+
+        @include responsive(sm) {
+            padding : 30px 30px 0 30px;
+        }
+
+        label {
+            font-size   : 16px;
+            font-weight : 500;
+
+            @include responsive(sm) {
+                font-size : 13px;
+            }
+        }
+
+        .form-control {
+            width         : 100%;
+            margin-bottom : 40px;
+            height        : 50px;
+            border        : 1px solid $color-border;
+            font-size     : 13px;
+            cursor        : pointer;
+
+            @include responsive(sm) {
+                margin-bottom : 30px;
+            }
+
+            &:focus {
+                box-shadow   : none;
+                border-color : $color-primary;
+            }
+        }
+    }
+}
+
+

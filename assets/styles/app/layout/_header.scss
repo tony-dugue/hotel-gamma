@@ -1,0 +1,130 @@
+
+.header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    transition-duration: 500ms;
+    background-color: $color-primary;
+}
+
+/* ======================== TOP HEADER ================================== */
+
+.top-header {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    background-color: $color-secondary;
+
+    &__content {
+        display: flex;
+        align-items: center;
+
+        & > a {
+            color: $color-white;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 50px;
+            display: inline-block;
+            margin-right: 50px;
+
+            @include responsive(sm) {
+                margin-right: 15px;
+            }
+            @include responsive(md) {
+                margin-right: 30px;
+            }
+
+            span {
+                @include responsive(sm) {
+                    display: none;
+                }
+                @include responsive(md) {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            i {
+                padding-right: 5px;
+                color: $color-primary;
+            }
+
+            &:hover,
+            &:focus {
+                color: #afb4bf; }
+        }
+
+        .social-icons {
+            a {
+                display: inline-block;
+                margin-right: 30px;
+                color: $color-white;
+                line-height: 50px;
+                font-size: 17px;
+                transition: color 0.2s ease-in-out;
+
+                @include responsive(sm) {
+                    margin-right : 15px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                .facebook-icon,
+                .twitter-icon,
+                .tripadvisor-icon,
+                .instagram-icon,
+                .youtube-icon {
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &:hover,
+                &:focus {
+                    .facebook-icon { color: $color-social-fcb; }
+                    .twitter-icon { color: $color-social-twitter; }
+                    .youtube-icon { color: $color-social-youtube; }
+                    .tripadvisor-icon { color: $color-social-tripadvisor; }
+                    .instagram-icon { color: $color-social-instagram; }
+                }
+            }
+        }
+    }
+}
+
+.user-header {
+    background-color : #f5f4f4;
+
+    &__message {
+        color: $color-primary;
+        margin: 5px auto;
+    }
+}
+
+/* ======================== MAIN HEADER ================================== */
+
+.main-header {
+    position: relative;
+    z-index: 1;
+    height: 100px;
+    background-color: $color-white;
+
+    .navbar-brand {
+        img {
+            height: 80px;
+        }
+    }
+
+    .navbar {
+        .nav-link {
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: 500;
+            padding: 0 40px;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.btn:focus {
+    box-shadow : none;
+}
+
+.gamma-btn {
+    position            : relative;
+    z-index             : 1;
+    min-width           : 150px;
+    height              : 46px;
+    line-height         : 46px;
+    font-size           : 16px;
+    font-weight         : 500;
+    display             : inline-block;
+    padding             : 0 40px;
+    text-align          : center;
+    text-transform      : capitalize;
+    background-color    :$color-primary;
+    color               : $color-white;
+    border              : none;
+    border-radius       : 2px;
+    transition-duration : 500ms;
+
+    &:hover, &:focus {
+        font-weight        : 500;
+        box-shadow         : 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+        background-color   : $color-white;
+        color              : $color-primary;
+    }
+
+    &.btn-transparent {
+        min-width        : 180px;
+        height           : 50px;
+        line-height      : 46px;
+        border           : 2px solid $color-primary;
+        background-color : transparent;
+        color            : $color-white;
+
+        &:hover, &:focus {
+            color            : $color-white;
+            background-color : $color-primary;
+        }
+    }
+}
+
+
+.continue-btn {
+    padding         : 0;
+    line-height     : 1;
+    color           : #afb4bf;
+    font-size       : 16px;
+    text-transform  : capitalize;
+    text-decoration : underline;
+    font-weight     : 500;
+
+    &:hover, &:focus {
+        text-decoration : underline;
+        color           :$color-black;
+    }
+}
+

@@ -1,0 +1,71 @@
+.ui-slider .ui-slider-range {
+    height : 5px !important;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+    border-bottom-right-radius : 0;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+    border-bottom-left-radius : 0;
+}
+
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+    border-top-right-radius : 0;
+}
+
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+    border-top-left-radius : 0;
+}
+
+.ui-widget-header {
+    border     : 1px solid $color-primary;
+    background : $color-primary;
+}
+
+.ui-widget.ui-widget-content {
+    border           : 1px solid $color-primary;
+    background-color : $color-secondary;
+    height           : 5px !important;
+}
+
+.ui-slider .ui-slider-handle {
+    border-radius : 50%;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border     : 1px solid $color-paragraph;
+    background : $color-paragraph;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    top : -7px;
+}
+
+.datepicker {
+    padding            : 15px;
+    box-shadow         : 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+}
+
+.datepicker.dropdown-menu {
+    font-size   : 14px;
+    color       : #636a76;
+    font-weight : 400;
+}

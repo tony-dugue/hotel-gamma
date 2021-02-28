@@ -1,12 +1,92 @@
-<footer class="footer-container container">
-    <div class="footer-main">
-        <ul class="footer-nav">
-            <li><a href="{{ path('homepage') }}">Accueil</a></li>
-            <li><a href="#">Actualités</a></li>
-            <li><a href="{{ path('accomodation_showAll') }}">Nos Chambres</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <p>Copyright 2019 Tous droits réservés</p>
+<!-- Footer Area Start -->
+<footer class="footer-section section-padding-80-0">
+
+    <!-- Main Footer -->
+
+    <div class="main-footer">
+        <div class="container">
+            <div class="row align-items-baseline justify-content-between">
+
+                <!-- Single Footer Widget -->
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="main-footer__column mb-80">
+
+                        <!-- Footer Logo -->
+
+                        <a href="#" class="footer-logo"><img src="images/logo.png" alt=""></a>
+                        <h4>02 99 56 35 42</h4>
+                        <span>gamma-hotel@gmail.com</span>
+                        <span>85, rue de la plage - 56000 Lorient</span>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+
+                <div class="col-12 col-sm-4 col-lg-2">
+                    <div class="main-footer__column mb-80">
+
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Liens</h5>
+
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                            <li><a href="{{ path('construct_page') }}">Actualités</a></li>
+                            <li><a href="{{ path('accomodation_showAll') }}">Nos Chambres</a></li>
+                            <li><a href="{{ path('construct_page') }}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+
+                <div class="col-12 col-sm-8 col-lg-4">
+                    <div class="main-footer__column mb-80">
+
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Souscrire à la newsletter</h5>
+                        <span>Abonnez-vous à notre newsletter pour être informé des actualités.</span>
+
+                        <!-- Newsletter Form -->
+                        <form action="#" class="nl-form">
+                            <input type="email" class="form-control" placeholder="Saisir votre email...">
+                            <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="footer-secondary"></div>
+
+    <!-- Copywrite -->
+
+    <div class="container">
+        <div class="copywrite">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+
+                    <!-- Copywrite Text -->
+
+                    <div class="copywrite__text">
+
+                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> - All rights reserved</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <!-- Social Info -->
+                    <div class="social-info">
+                        <a href="#"><i class="fab fa-facebook-f facebook-icon"></i></a>
+                        <a href="#"><i class="fab fa-twitter twitter-icon"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor tripadvisor-icon"></i></a>
+                        <a href="#"><i class="fab fa-youtube youtube-icon"></i></a>
+                        <a href="#"><i class="fab fa-instagram instagram-icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+<!-- Footer Area End -->
+

@@ -1,0 +1,157 @@
+.rooms-slides {
+    position : relative;
+    z-index  : 1;
+
+    .owl-prev, .owl-next {
+        transition-duration         : 500ms;
+        width                       : 130px;
+        height                      : 50px;
+        line-height                 : 50px;
+        text-align                  : center;
+        font-size                   : 16px;
+        font-weight                 : 600;
+        position                    : absolute;
+        bottom                      : 0;
+        z-index                     : 100;
+        background-image            : none !important;
+        background-color            : $color-white !important;
+
+        &:hover, &:focus {
+            background-color : $color-text !important;
+            color            : $color-white !important;
+        }
+    }
+
+    .owl-prev {
+        right : 50%;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    .owl-next {
+        background-color : $color-primary !important;
+        left             : 50%;
+        color            : $color-white !important;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+
+        &:hover, &:focus {
+            background-color : $color-text !important;
+            color            : $color-white;
+        }
+    }
+}
+
+.room-slides__item {
+    position         : relative;
+    z-index          : 1;
+    height           : 700px;
+    background-color : $color-secondary;
+    flex-wrap        : wrap;
+
+    @include responsive(lg) { height : 600px; }
+    @include responsive(md) { height : 600px; }
+    @include responsive(sm) { height : 700px; }
+
+    .room-thumbnail {
+        flex             : 0 0 50%;
+        max-width        : 50%;
+        width            : 50%;
+
+        @include responsive(sm) { 
+            flex             : 0 0 100%;
+            max-width        : 100%;
+            width            : 100%;
+            height           : 200px !important;
+        }
+    }
+
+    .room-content {
+        background-color : $color-secondary;
+        flex             : 0 0 50%;
+        max-width        : 50%;
+        width            : 50%;
+        padding-left     : 80px;
+
+        @include responsive(lg) { 
+            padding-left : 50px; 
+        }
+        @include responsive(md) { 
+            padding-left : 30px; 
+        }
+        @include responsive(sm) {
+            flex             : 0 0 100%;
+            max-width        : 100%;
+            width            : 100%;
+            padding-left     : 15px;
+            margin-bottom    : 50px;
+        }
+
+        h2 {
+            color         : $color-white;
+            font-size     : 48px;
+            display       : block;
+            margin-bottom : 15px;
+
+            @include responsive(lg) { 
+                font-size : 36px;
+            }
+            @include responsive(md) { 
+                font-size : 30px;
+            }
+            @include responsive(sm) {
+                font-size : 24px;
+            }
+        }
+
+        h3 {
+            color         : $color-primary;
+            font-size     : 36px;
+            display       : block;
+            margin-bottom : 25px;
+
+            @include responsive(sm) {
+                font-size : 30px;
+            }
+
+            span {
+                color     : $color-white;
+                font-size : 16px;
+            }
+        }
+
+        .room-feature {
+            position      : relative;
+            z-index       : 1;
+            margin-bottom : 30px;
+
+            @include responsive(sm) {
+                margin-bottom : 0;
+            }
+
+            li {
+                color         : $color-white;
+                display       : block;
+                margin-bottom : 15px;
+
+                @include responsive(md) { 
+                    font-size : 14px;
+                }
+                @include responsive(sm) {
+                    font-size     : 12px;
+                    margin-bottom : 5px;
+                }
+
+                span {
+                    min-width : 110px;
+                    display   : inline-block;
+                }
+
+                &:last-child {
+                    margin-bottom : 0;
+                }
+            }
+        }
+    }
+}
+

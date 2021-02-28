@@ -1,0 +1,60 @@
+.single-post {
+    position            : relative;
+    z-index             : 1;
+    transition-duration : 500ms;
+
+    &__thumbnail {
+        display       : block;
+        margin-bottom : 30px;
+    }
+
+    &__meta {
+        position      : relative;
+        z-index       : 1;
+        margin-bottom : 8px;
+
+        a {
+            position       : relative;
+            z-index        : 1;
+            font-size      : 14px;
+            color          : #afb4bf;
+            display        : inline-block;
+            margin-right   : 30px;
+            text-transform : uppercase;
+            letter-spacing : 1px;
+
+            &:last-child {
+                margin-right : 0;
+                color        : $color-primary;
+            }
+
+            &:hover, &:focus {
+                color : $color-primary;
+            }
+        }
+    }
+
+    &__title {
+        font-size     : 20px;
+        line-height   : 1.2;
+        display       : block;
+        margin-bottom : 15px;
+
+        &:hover, &:focus {
+            color : $color-primary;
+        }
+    }
+
+    p {
+        margin-bottom : 15px;
+    }
+
+    &:hover, &focus {
+        transform : translateY(-10px);
+
+        .single-post__title {
+            color :$color-primary;
+        }
+    }
+}
+

@@ -15,16 +15,19 @@ class AccomodationSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type', EntityType::class, ['class' => Type::class])
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'attr'  => ['class' => 'form-control']
+            ])
             ->add('priceMin', IntegerType::class, [
                 'required' => false,
                 'label'    => false,
-                'attr'     => ['placeholder' => 'Prix min']
+                'attr'     => ['placeholder' => 'Prix min', 'class' => 'form-control']
             ])
             ->add('priceMax', IntegerType::class, [
                 'required' => false,
                 'label'    => false,
-                'attr'     => ['placeholder' => 'Prix max']
+                'attr'     => ['placeholder' => 'Prix max', 'class' => 'form-control']
             ]);
     }
 

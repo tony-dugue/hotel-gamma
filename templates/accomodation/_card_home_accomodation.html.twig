@@ -1,0 +1,21 @@
+<div class="room-card home">
+    <!-- Room Thumbnail -->
+    <div class="room-card__image-home">
+        <img src="{{ asset('uploads/rooms/' ~ acc.photo) }}" alt="">
+    </div>
+    <!-- Room Content -->
+    <div class="room-card__content">
+        <h2>{{ acc.type.name }} {{ acc.category.name }}</h2>
+        <h4>{{ acc.price }}€ <span>/ nuit</span></h4>
+        <div class="room-card__content--feature">
+            <h6>Surface : <span>{{ acc.size }}m<sup>2</sup></span></h6>
+            <h6>Capacité : <span>{{ acc.persons }} personnes</span></h6>
+            <h6>Lits : <span>{{ acc.beds }}</span></h6>
+            <h6>Services: <span>Wifi, television et douche</span></h6>
+        </div>
+        <a href="{{ path('accomodation_show', { id: acc.id}) }}" class="btn view-detail-btn">Voir détails <i class="fas fa-arrow-right"></i></a>
+    </div>
+</div>
+
+
+

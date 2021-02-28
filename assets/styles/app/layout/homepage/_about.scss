@@ -1,0 +1,58 @@
+.about-section {
+    padding-top    : 180px;
+    padding-bottom : 0;
+}
+
+.about {
+    &__content {
+        position : relative;
+        z-index  : 1;
+    
+        h5 {
+            line-height   : 1.8;
+            color         : $color-paragraph;
+            margin-bottom : 30px;
+            font-weight   : 400;
+        }
+    
+        p {
+            margin-bottom : 30px;
+    
+            span {
+                color : $color-primary;
+            }
+        }
+    }
+
+    &__thumbnail {
+        position : relative;
+        z-index  : 1;
+    
+        .single-thumb {
+            position      : relative;
+            z-index       : 1;
+            margin        : 5px;
+            display       : block;
+            overflow      : hidden;
+            border-radius : 6px;
+    
+            img {
+                transition-duration : 500ms;
+                border-radius       : 6px;
+            }
+    
+            &:first-child {
+                margin-bottom : 10px;
+            }
+    
+            &:hover, &:focus {
+                img {
+                    transform : scale(1.15);
+                }
+            }
+        }
+    }
+}
+
+
+

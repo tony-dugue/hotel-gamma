@@ -4,10 +4,6 @@
 
 {% block body %}
 
-<section class="page-header room-header container">
-    <img src="{{ asset('images/home-header-bg.jpg') }}" class="img-responsive" alt="Gamma Hotel">
-</section>
-
 <section class="container home-content"style="padding: 30px 0 100px 0; text-align: center;">
 
     <h1>Bonjour {{ booking.user.username }}</h1>
@@ -20,7 +16,7 @@
     <div class="grid grid-rooms" style="margin: 20px 100px;">
         {% include 'accomodation/_card_accomodation.html.twig' with {'acc' : booking.accomodation} only %}
     </div>
-    
+
     <div>
         <p>Revenir à la page d'accueil : <a href="{{ path('homepage') }}">Page d'accueil</a></p>
     </div>

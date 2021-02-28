@@ -1,0 +1,102 @@
+.room-card {
+    position : relative;
+    z-index  : 1;
+
+    @include responsive(sm) { flex-wrap : wrap; }
+
+    &.home {
+        margin-bottom: 30px;
+    }
+
+    &__thumbnail {
+        position         : relative;
+        z-index          : 1;
+        flex             : 0 0 50%;
+        max-width        : 50%;
+        width            : 50%;
+
+        @include responsive(sm) {
+            flex             : 0 0 100%;
+            max-width        : 100%;
+            width            : 100%;
+            margin-bottom    : 30px;
+        }
+
+        img {
+            border-radius : 4px;
+        }
+    }
+
+    &__content {
+        position     : relative;
+        z-index      : 1;
+        padding-left : 35px;
+
+        @include responsive(sm) {
+            flex             : 0 0 100%;
+            max-width        : 100%;
+            width            : 100%;
+            padding-left     : 0;
+        }
+
+        h2 {
+            font-size     : 30px;
+            display       : block;
+            margin-bottom : 5px;
+
+            @include responsive(lg) { font-size : 24px; }
+            @include responsive(sm) { font-size : 24px; }
+        }
+
+        h4 {
+            color         : $color-primary;
+            margin-bottom : 20px;
+
+            span {
+                color     : #afb4bf;
+                font-size : 14px;
+            }
+        }
+
+        &--feature {
+            display       : flex;
+            flex-wrap     : wrap;
+            position      : relative;
+            z-index       : 1;
+            margin-bottom : 20px;
+
+            h6 {
+                flex             : 0 0 50%;
+                max-width        : 50%;
+                width            : 50%;
+                font-weight      : 400;
+                color            : #afb4bf;
+                margin-bottom    : 10px;
+
+                @include responsive(lg) { font-size : 14px; }
+
+                span {
+                    color   : $color-text;
+                    display : block;
+                }
+            }
+        }
+
+        .view-detail-btn {
+            padding     : 0;
+            font-size   : 16px;
+            color       : $color-primary;
+            font-weight : 500;
+
+            &:hover, &:focus {
+                color : $color-black;
+            }
+        }
+    }
+
+    &__image-home {
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 15px;
+    }
+}

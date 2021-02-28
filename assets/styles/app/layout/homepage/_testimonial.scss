@@ -1,0 +1,81 @@
+.testimonials-section {
+    position : relative;
+    z-index  : 1;
+
+    .testimonial-thumbnail {
+        position      : relative;
+        z-index       : 1;
+        padding-right : 15px;
+
+        img {
+            border-radius : 8px;
+            width         : 70% !important;
+        }
+    }
+}
+
+.testimonial-slides {
+    &__item {
+        h5 {
+            color       : $color-paragraph;
+            font-weight : 400;
+            font-size   : 18px;
+            line-height : 1.8;
+
+            @include responsive(lg) { font-size : 16px; }
+            @include responsive(md) { font-size : 16px; }
+            @include responsive(sm) { font-size : 16px; }
+        }
+
+        .rating-title {
+            position   : relative;
+            z-index    : 1;
+            margin-top : 15px;
+
+            .rating {
+                display       : block;
+                margin-bottom : 10px;
+
+                i {
+                    color     : $color-star;
+                    font-size : 14px;
+                }
+
+                h6 {
+                    margin-bottom : 0;
+
+                    span {
+                        color       : $color-primary;
+                        font-size   : 14px;
+                        font-weight : 400;
+                    }
+                }
+            }
+        }
+    }
+
+    .owl-dots {
+        display           : flex;
+        align-items       : center;
+        margin-top        : 40px;
+
+        .owl-dot {
+            flex             : 0 0 12px;
+            max-width        : 12px;
+            width            : 12px;
+            height           : 12px;
+            background-color : #c0c8d7;
+            border-radius    : 50%;
+            margin           : 0 5px;
+
+            &.active {
+                flex             : 0 0 12px;
+                max-width        : 12px;
+                width            : 12px;
+                background-color : $color-primary;
+                border-radius    : 50%;
+            }
+        }
+    }
+}
+

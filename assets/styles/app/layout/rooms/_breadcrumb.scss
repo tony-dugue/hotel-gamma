@@ -1,0 +1,70 @@
+.breadcrumb-section {
+    position : relative;
+    z-index  : 1;
+    height   : 300px;
+
+    @include responsive(sm) { height : 200px; }
+
+    .page-title {
+        color     : $color-white;
+        font-size : 48px;
+
+        @include responsive(lg) { font-size : 36px; }
+        @include responsive(md) { font-size : 36px; }
+        @include responsive(sm) { font-size : 24px; }
+    }
+
+    &__content {
+        position : relative;
+        z-index  : 1;
+    
+        .breadcrumb {
+            padding          : 0;
+            background-color : transparent;
+            margin-bottom    : 0;
+    
+            .breadcrumb-item {
+                color : $color-white;
+    
+                a {
+                    color : $color-white;
+    
+                    &:hover, &:focus {
+                        color : $color-primary;
+                    }
+                }
+    
+                &--icon {
+                    color : $color-primary;
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        .room-title {
+            font-size     : 48px;
+            color         : $color-white;
+            margin-bottom : 0;
+
+            @include responsive(lg) { font-size : 42px; }
+            @include responsive(md) { font-size : 30px; }
+            @include responsive(sm) { font-size : 24px; }
+        }
+
+        .room-price {
+            font-size     : 36px;
+            color         : $color-primary;
+            margin-bottom : 0;
+
+            @include responsive(sm) { font-size : 14px; }
+
+            span {
+                font-size : 18px;
+                color     : $color-white;
+
+                @include responsive(sm) { font-size : 12px; }
+            }
+        }
+    }
+}
+

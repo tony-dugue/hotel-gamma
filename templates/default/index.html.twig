@@ -4,72 +4,529 @@
 
 {% block body %}
 
-    <section class="page-header home-header container">
-        <img src="{{ asset('images/home-header-bg.jpg') }}" class="img-responsive" alt="Gamma Hotel">
-    </section>
+<!-- Welcome Section Start -->
+<section class="welcome-section">
+    <div class="welcome-slider owl-carousel">
 
-    <section class="container home-content">
+        <!-- Single Welcome Slide -->
 
-        <h1>Bienvenue à l'hôtel Gamma</h1>
+        <div
+            class="welcome-slider__slide bg-img bg-overlay"
+            style="background-image:url({{ asset('images/home-header-bg-1.jpg') }})"
+            data-img-url="images/home-header-bg-1.jpg">
 
-        {#
-        <div class="form-group">
-            <label for="search-type">Type</label>
-            <select name="type_id" id="search-type">
-                {% for type in types %}
-                    <option>{{ type.name }}</option>
-                {% endfor %}
-            </select>
+            <!-- Welcome Content -->
+
+            <div class="welcome-content h-100">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12">
+                            <div class="welcome-text text-center">
+                                <h6 data-animation="fadeInLeft" data-delay="200ms">Hotel &amp; Resort</h6>
+                                <h2 data-animation="fadeInLeft" data-delay="500ms">Welcome to Gamma Hotel</h2>
+                                <a href="#" class="btn gamma-btn btn-transparent" data-animation="fadeInLeft" data-delay="800ms">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        #}
 
-        {{ form_start(searchForm, {'attr' : {'class': 'form-search'}}) }}
-            <div class="form-group">
-                {{ form_label(searchForm, 'Type') }}
-                {{ form_widget(searchForm.type) }}
-            </div>
-            <div class="form-group">
-                {{ form_label(searchForm, 'Prix min') }}
-                {{ form_widget(searchForm.priceMin, {'attr' : {'value': minPrice} }) }}
-            </div>
-            <div class="form-group">
-                {{ form_label(searchForm, 'Prix max') }}
-                {{ form_widget(searchForm.priceMax, {'attr' : {'value': maxPrice}}) }}
-            </div>
-            <button type="submit" class="button button-primary"><i class="fa fa-search"></i>Rechercher</button>
-            <a href="{{ path('homepage') }}" class="button button-primary">Tous les logements</a>
-        {{ form_end(searchForm) }}
+        <!-- Single Welcome Slide -->
 
-        <h2>Découvrez nos chambres</h2>
+        <div
+                class="welcome-slider__slide bg-img bg-overlay"
+                style="background-image:url({{ asset('images/home-header-bg-2.jpg') }})"
+                data-img-url="images/home-header-bg-2.jpg">
 
-        <div class="grid grid-rooms">
+            <!-- Welcome Content -->
+
+            <div class="welcome-content h-100">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12">
+                            <div class="welcome-text text-center">
+                                <h6 data-animation="fadeInUp" data-delay="200ms">Hotel &amp; Resort</h6>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Welcome to Gamma Hotel</h2>
+                                <a href="#" class="btn gamma-btn btn-transparent" data-animation="fadeInUp" data-delay="800ms">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Welcome Slide -->
+
+        <div
+                class="welcome-slider__slide bg-img bg-overlay"
+                style="background-image:url({{ asset('images/home-header-bg-3.jpg') }})"
+                data-img-url="images/home-header-bg-3.jpg">
+
+            <!-- Welcome Content -->
+
+            <div class="welcome-content h-100">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12">
+                            <div class="welcome-text text-center">
+                                <h6 data-animation="fadeInDown" data-delay="200ms">Hotel &amp; Resort</h6>
+                                <h2 data-animation="fadeInDown" data-delay="500ms">Welcome to Gamma Hotel</h2>
+                                <a href="#" class="btn gamma-btn btn-transparent" data-animation="fadeInDown" data-delay="800ms">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Welcome Section End -->
+
+<!-- Search Rooms Section Start -->
+<section class="search-rooms-section">
+
+    <div class="search-rooms">
+        <div class="container-fluid">
+
+            <div class="search-rooms__form">
+
+                {{ form_start(searchForm, {'attr' : {'class': 'form-search'}}) }}
+
+                    <div class="row justify-content-between align-items-end">
+
+                        <div class="col-5 col-md-2 col-lg-2">
+                            {{ form_label(searchForm, 'Type') }}
+                            {{ form_widget(searchForm.type) }}
+                        </div>
+
+                        <div class="col-4 col-md-2 col-lg-2">
+                            {{ form_label(searchForm, 'Prix min') }}
+                            {{ form_widget(searchForm.priceMin, {'attr' : {'value': minPrice} }) }}
+                        </div>
+
+                        <div class="col-4 col-md-2 col-lg-2">
+                            {{ form_label(searchForm, 'Prix max') }}
+                            {{ form_widget(searchForm.priceMax, {'attr' : {'value': maxPrice}}) }}
+                        </div>
+
+                        <div class="col-12 col-md-2">
+                            <button type="submit" class="form-control btn gamma-btn w-100">Rechercher</button>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                            <a href="{{ path('homepage') }}" class="form-control btn gamma-btn w-100">Tous les logements</a>
+                            {{ form_end(searchForm) }}
+                        </div>
+
+                    </div>
+
+                {{ form_end(searchForm) }}
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- Search Rooms Section  End -->
+
+<!-- Rooms Section Start -->
+<section class="blog-section section-padding-100-0">
+    <div class="container">
+        <div class="row">
+
+            <!-- Section Heading -->
+
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h6>Chambres</h6>
+                    <h2>Découvrer nos chambres</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
 
             {% if accomodations %}
-
                 {% for acc in accomodations %}
-                    {% include 'accomodation/_card_accomodation.html.twig' with {'acc' : acc} only %}
-                {% endfor %}
 
+                    <div class="col-sm-12 col-lg-6">
+                        {% include 'accomodation/_card_home_accomodation.html.twig' with {'acc' : acc} only %}
+                    </div>
+
+                {% endfor %}
             {% else %}
                 <p>Aucun résultat trouvé</p>
             {% endif %}
+        </div>
+    </div>
+</section>
+<!-- Rooms Section End -->
+
+
+<!-- About Section Start -->
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-12 col-lg-6">
+
+                <!-- Section Heading -->
+                <div class="section-heading">
+                    <h6>A propos</h6>
+                    <h2>Bienvenue au <br>Gamma Hotel & Resort</h2>
+                </div>
+
+                <div class="about__content mb-100">
+                    <h5>
+                        Le Gamma Hotel vous accueille dans un parc verdoyant dans lequel se trouvent Magnolia, palmiers,
+                        oliviers, ainsi que des plantes exotiques. Sa piscine découverte vous permettra de vous détendre et de
+                        profiter pleinement du soleil grâce à ses transats. un véritable moment de paix et de détente.</h5>
+                    <p class="wow fadeInUp" data-wow-delay="400ms">Directeur : <span>John Doe</span></p>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="about__thumbnail mb-100">
+                    <div class="row no-gutters">
+
+                        <div class="col-6">
+                            <div class="single-thumb">
+                                <img src="{{ asset('images/about1.jpg') }}" alt="">
+                            </div>
+                            <div class="single-thumb">
+                                <img src="{{ asset('images/about2.jpg') }}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="single-thumb">
+                                <img src="{{ asset('images/about3.jpg') }}" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
+    </div>
 
-    </section>
+</section>
+<!-- About Section End -->
 
-    <section class="container home-content" style="background: #e8eaec">
+<!-- Room Section Start -->
+<section class="rooms-section">
 
-        <h2>Top 3 des chambres les plus réservés</h2>
+    <div class="col-12">
+        <div class="section-heading text-center">
+            <h6>Top 3</h6>
+            <h2>Les chambres les plus réservées</h2>
+        </div>
+    </div>
 
-        <div class="grid grid-rooms">
+    <div class="rooms-slides owl-carousel">
 
-            {% for acc in bestAccomodations %}
-                {% include 'accomodation/_card_accomodation.html.twig' with {'acc' : acc} only %}
-            {% endfor %}
+        <!-- Single Room Slide -->
 
+        {% for acc in bestAccomodations %}
+            {% include 'accomodation/_card_top_accomodation.html.twig' with {'acc' : acc} only %}
+        {% endfor %}
+
+    </div>
+</section>
+<!-- Room Section End -->
+
+<!-- Testimonials Section Start -->
+<section class="testimonials-section section-padding-100-0">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-12 col-md-4">
+                <div class="testimonial-thumbnail owl-carousel mb-100">
+                    <img src="{{ asset('images/testimonial1.jpg') }}" alt="">
+                    <img src="{{ asset('images/testimonial2.jpg') }}" alt="">
+                    <img src="{{ asset('images/testimonial4.jpg') }}" alt="">
+                    <img src="{{ asset('images/testimonial3.jpg') }}" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+
+                <!-- Section Heading -->
+
+                <div class="section-heading">
+                    <h6>Testimonials</h6>
+                    <h2>Nos clients témoignent</h2>
+                </div>
+
+                <!-- Testimonial Slide -->
+
+                <div class="testimonial-slides owl-carousel mb-100">
+
+                    <!-- Single Testimonial Slide -->
+
+                    <div class="testimonial-slides__item">
+                        <h5>“Merci ce séjour vraiment incroyable! Votre hospitalité est tout à fait exceptionnelle. Le centre sportif est également très bon avec des courts de tennis d'excellente qualité. J'espère être de retour bientôt.”</h5>
+                        <div class="rating-title">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h6>Roberta Downey <span>- Etats-Unis</span></h6>
+                        </div>
+                    </div>
+
+                    <!-- Single Testimonial Slide -->
+
+                    <div class="testimonial-slides__item">
+                        <h5>“Au-delà de 5 étoiles! J'ai séjourné la semaine dernière dans ce merveilleux hôtel. En plus, le personnel est formidable, extrêmement gentil et serviable répondant à tous les souhaits. C'est un endroit que vous ne voulez pas quitter, et lorsque vous le faites, c'est avec un seul espoir: revenir!”</h5>
+                        <div class="rating-title">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h6>Akash Downey <span>- Espagne</span></h6>
+                        </div>
+                    </div>
+
+                    <!-- Single Testimonial Slide -->
+
+                    <div class="testimonial-slides__item">
+                        <h5>“Le service a été juste fantastique; tout ce dont nous avions besoin nous a été apporté immédiatement. Notre coordinatrice de l'événement était incroyable et très dispnible. La nourriture était si délicieuse; toute l'expérience était vraiment géniale.”</h5>
+                        <div class="rating-title">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h6>Downey Sarah <span>- Norvège</span></h6>
+                        </div>
+                    </div>
+
+                    <!-- Single Testimonial Slide -->
+
+                    <div class="testimonial-slides__item">
+                        <h5>“Nous avons adoré l'hôtel et en particulier le personnel qui offrent le meilleur service au monde, des sourires charmants, une grâce, un calme et un charme incomparables. Parfait!!”</h5>
+                        <div class="rating-title">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <h6>Robert Brown <span>- France</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials Section End -->
+
+<!-- Projects Section Start -->
+<section class="project-section">
+
+    <!-- Projects Slide -->
+
+    <div class="projects-slides owl-carousel">
+
+        <!-- Single Project Slide -->
+
+        <div class="project-slide active bg-img" style="background-image:url({{ asset('images/hotel5.jpg') }})">
+            <!-- Project Text -->
+            <div class="project-slide__content">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Piscine couverte</h5>
+                </div>
+            </div>
+            <!-- Hover Effects -->
+            <div class="hover-effects">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Piscine couverte</h5>
+                    <p>I focus a lot on helping the first time or inexperienced traveler head out prepared and confident...</p>
+                </div>
+                <a href="#" class="btn project-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
 
-    </section>
+        <!-- Single Project Slide -->
+
+        <div class="project-slide bg-img" style="background-image:url({{ asset('images/hotel6.jpg') }})">
+            <!-- Project Text -->
+            <div class="project-slide__content">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Restaurant</h5>
+                </div>
+            </div>
+            <!-- Hover Effects -->
+            <div class="hover-effects">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Restaurant</h5>
+                    <p>I focus a lot on helping the first time or inexperienced traveler head out prepared and confident...</p>
+                </div>
+                <a href="#" class="btn project-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Single Project Slide -->
+
+        <div class="project-slide bg-img" style="background-image:url({{ asset('images/hotel7.jpg') }})">
+            <!-- Project Text -->
+            <div class="project-slide__content">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Piscine à remous</h5>
+                </div>
+            </div>
+            <!-- Hover Effects -->
+            <div class="hover-effects">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Piscine à remous</h5>
+                    <p>I focus a lot on helping the first time or inexperienced traveler head out prepared and confident...</p>
+                </div>
+                <a href="#" class="btn project-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Single Project Slide -->
+
+        <div class="project-slide bg-img" style="background-image:url({{ asset('images/hotel8.jpg') }})">
+            <!-- Project Text -->
+            <div class="project-slide__content">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Piscine</h5>
+                </div>
+            </div>
+            <!-- Hover Effects -->
+            <div class="hover-effects">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Piscine</h5>
+                    <p>I focus a lot on helping the first time or inexperienced traveler head out prepared and confident...</p>
+                </div>
+                <a href="#" class="btn project-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Single Project Slide -->
+
+        <div class="project-slide bg-img" style="background-image:url({{ asset('images/hotel9.jpg') }})">
+            <!-- Project Text -->
+            <div class="project-slide__content">
+                <div class="text">
+                    <h6>Divertissements</h6>
+                    <h5>Bouquet Chaines TV</h5>
+                </div>
+            </div>
+            <!-- Hover Effects -->
+            <div class="hover-effects">
+                <div class="text">
+                    <h6>Entertaiment</h6>
+                    <h5>Racing Bike</h5>
+                    <p>I focus a lot on helping the first time or inexperienced traveler head out prepared and confident...</p>
+                </div>
+                <a href="#" class="btn project-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Projects Section End -->
+
+<!-- Blog Section Start -->
+<section class="blog-section section-padding-100-0">
+    <div class="container">
+        <div class="row">
+
+            <!-- Section Heading -->
+
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <h6>Notre Blog</h6>
+                    <h2>Dernières News &amp; Evènements</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- Single Post Area -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-post mb-100">
+                    <a href="#" class="single-post__thumbnail"><img src="{{ asset('images/yoga.jpg') }}" alt=""></a>
+                    <!-- Post Meta -->
+                    <div class="single-post__meta">
+                        <a href="#" class="post-date">02 jan 2019</a>
+                        <a href="#" class="post-category">Evènement</a>
+                    </div>
+                    <!-- Post Title -->
+                    <a href="#" class="single-post__title">Cours de yoga</a>
+                    <p>Meowing chowing and wowing love to play with owner's hair tie scratch at door to be let outside. </p>
+                    <a href="#" class="btn continue-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Post Area -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-post mb-100">
+                    <a href="#" class="single-post__thumbnail"><img src="{{ asset('images/hotel3.jpg') }}" alt=""></a>
+                    <!-- Post Meta -->
+                    <div class="single-post__meta">
+                        <a href="#" class="post-date">24 nov 2020</a>
+                        <a href="#" class="post-category">Animation</a>
+                    </div>
+                    <!-- Post Title -->
+                    <a href="#" class="single-post__title">Soirée Salsa</a>
+                    <p>Lick yarn hanging out of own butt. Sniff all the things sniff all the things and twitch tail in
+                        permanent irritation.</p>
+                    <a href="#" class="btn continue-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Post Area -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-post mb-100">
+                    <a href="#" class="single-post__thumbnail"><img src="{{ asset('images/hotel4.jpg') }}" alt=""></a>
+                    <!-- Post Meta -->
+                    <div class="single-post__meta">
+                        <a href="#" class="post-date">23 mars 2021</a>
+                        <a href="#" class="post-category">Service</a>
+                    </div>
+                    <!-- Post Title -->
+                    <a href="#" class="single-post__title">Petit déjeuner servi en chambre</a>
+                    <p>Catching very fast laser pointer need to chase tail, yet i shall purr myself to sleep.</p>
+                    <a href="#" class="btn continue-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
 
 {% endblock %}

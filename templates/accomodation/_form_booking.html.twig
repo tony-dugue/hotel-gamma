@@ -1,30 +1,61 @@
 
 {{ form_start(bookingForm, {'attr' : {'class': 'form-booking'}}) }}
 
-    <fieldset>
-
-        <legend>Réservation</legend>
-
-        <div class="form-group">
-            {{ form_label(bookingForm, 'Date de départ') }}
-            {{ form_widget(bookingForm.dateStart) }}
+    <div class="form-group mb-30">
+        <label for="checkInDate">Date</label>
+        <div>
+            <div class="row no-gutters">
+                <div class="col-6">
+                    {{ form_widget(bookingForm.dateStart) }}
+                </div>
+                <div class="col-6">
+                    {{ form_widget(bookingForm.dateEnd) }}
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="form-group">
-            {{ form_label(bookingForm, 'Date d\'arrivée') }}
-            {{ form_widget(bookingForm.dateEnd) }}
+    <!--
+    <div class="form-group mb-30">
+        <label for="guests">Nbre personnes</label>
+        <div class="row">
+            <div class="col-6">
+                <select name="adults" id="guests" class="form-control">
+                    <option value="adults">Adultes</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <select name="children" id="children" class="form-control">
+                    <option value="children">Enfants</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                </select>
+            </div>
         </div>
+    </div>
+    -->
 
-        {% if app.user %}
-            <button type="submit" class="button button-primary"><i class="fa fa-check"></i>Réserver</button>
-        {% else %}
-        <p>Veuillez-vous connecter pour faire une réservation :
-            <a href="{{ path('app_login') }}" class="button button-secondary"
-               style="width: 100px; display: inline;">Se connecter</a>
-        </p>
-        {% endif %}
+    {% if app.user %}
+        <div class="form-group">
+            <button type="submit" class="btn gamma-btn w-100"><i class="fa fa-check"></i>Réserver</button>
+        </div>
+    {% else %}
+    <p>Veuillez-vous connecter pour faire une réservation :
+        <a href="{{ path('app_login') }}" class="button button-secondary"
+           style="width: 100px; display: inline;">Se connecter</a>
+    </p>
+    {% endif %}
 
-    </fieldset>
 
 {{ form_end(bookingForm) }}
 

@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Booking;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,11 +15,13 @@ class BookingType extends AbstractType
         $builder
             ->add('dateStart',DateType::class, [
                 'widget' => 'single_text',
-                'label'    => false
+                'label'    => false,
+                'attr'  => ['class' => 'input-small form-control']
             ])
             ->add('dateEnd', DateType::class, [
                 'widget' => 'single_text',
-                'label'    => false
+                'label'    => false,
+                'attr'  => ['class' => 'input-small form-control']
             ])
         ;
     }

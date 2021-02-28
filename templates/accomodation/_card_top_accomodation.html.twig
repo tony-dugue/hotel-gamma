@@ -1,0 +1,26 @@
+<div class="room-slides__item d-flex align-items-center">
+
+    <!-- Thumbnail -->
+
+    <div class="room-thumbnail h-100 bg-img" style="background-image:url({{ asset('uploads/rooms/' ~ acc.photo) }})"></div>
+
+    <!-- Content -->
+
+    <div class="room-content">
+
+        <h2 data-animation="fadeInUp" data-delay="100ms">{{ acc.type.name }} {{ acc.category.name }}</h2>
+        <h3 data-animation="fadeInUp" data-delay="300ms">{{ acc.price }}€ <span>/ nuit</span></h3>
+
+        <ul class="room-feature" data-animation="fadeInUp" data-delay="500ms">
+            <li><span><i class="fa fa-check"></i> Surface</span> <span>: {{ acc.size }}m<sup>2</sup></span></li>
+            <li><span><i class="fa fa-check"></i> Capacité</span> <span>: {{ acc.persons }} personnes</span></li>
+            <li><span><i class="fa fa-check"></i> Lits</span> <span>: {{ acc.beds }}</span></li>
+            <li><span><i class="fa fa-check"></i> Services</span> <span>: Wifi, Television, Baignoire</span></li>
+        </ul>
+
+        <a href="{{ path('accomodation_show', { id: acc.id}) }}" class="btn gamma-btn mt-30" data-animation="fadeInUp"
+           data-delay="700ms">Voir plus</a>
+    </div>
+</div>
+
+
